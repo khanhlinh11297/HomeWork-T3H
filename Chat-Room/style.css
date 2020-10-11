@@ -12,7 +12,7 @@ a {
 .container {
   width: 790px;
   height: 850px;
-  margin: 100px auto;
+  margin: 90px auto;
   border-radius: 7px;
   box-shadow: 0px 2px #838D92;
   display: flex;
@@ -176,7 +176,13 @@ a {
 .messenger {
   margin-bottom: 20px;
   clear: both;
+  /* position: relative; */
 }
+/* .messenger .chat-content-box.by-me {
+  position: absolute;
+  top: 0;
+  right: 0;
+} */
   /* who chat */
 .messenger .name-time-chat {
   font-size: 14px;
@@ -226,7 +232,9 @@ a {
 .messenger-content {
   max-width: 400px;
 }
-
+/* .messenger-content .container-chat {
+  position: relative;
+} */
 .messenger-content .container-chat .triangle{
   height: 0px;
   width: 0px;
