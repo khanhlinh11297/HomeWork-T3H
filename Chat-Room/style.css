@@ -12,7 +12,7 @@ a {
 .container {
   width: 790px;
   height: 850px;
-  margin: 100px auto;
+  margin: 90px auto;
   border-radius: 7px;
   box-shadow: 0px 2px #838D92;
   display: flex;
@@ -113,8 +113,8 @@ a {
   margin: 5px 7px 5px 0;
 }
 .list-friend-content .status .circle.ofline {
-  background: #a04927;
-  border: 1px solid #62423b;
+  background: #DE8F71;
+  border: 1px solid #876962;
   box-sizing: border-box;
 }
 .list-friend-content .status .circle.online {
@@ -176,7 +176,13 @@ a {
 .messenger {
   margin-bottom: 20px;
   clear: both;
+  /* position: relative; */
 }
+/* .messenger .chat-content-box.by-me {
+  position: absolute;
+  top: 0;
+  right: 0;
+} */
   /* who chat */
 .messenger .name-time-chat {
   font-size: 14px;
@@ -226,7 +232,9 @@ a {
 .messenger-content {
   max-width: 400px;
 }
-
+/* .messenger-content .container-chat {
+  position: relative;
+} */
 .messenger-content .container-chat .triangle{
   height: 0px;
   width: 0px;
@@ -308,9 +316,9 @@ textarea {
   font-size: 20px;
 }
 .typing .send .send-button {
-  float: right; 
+  float: right;
   color: #A5BCD6;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 600;
   clear: both;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
