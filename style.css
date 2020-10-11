@@ -176,12 +176,6 @@ a {
 .messenger {
   margin-bottom: 20px;
   clear: both;
-  /* position: relative; */
-}
-.messenger .chat-content-box.by-me {
-  /* position: absolute;
-  top: 0;
-  right: 0; */
 }
   /* who chat */
 .messenger .name-time-chat {
@@ -232,9 +226,7 @@ a {
 .messenger-content {
   max-width: 400px;
 }
-.messenger-content .container-chat {
-  /* position: relative; */
-}
+
 .messenger-content .container-chat .triangle{
   height: 0px;
   width: 0px;
@@ -305,8 +297,6 @@ textarea {
   border: 1px solid #F8FAFB;
   border-radius: 5px;
   margin-bottom: 10px;
-}
-.send {
 }
 .typing .send .fa-file {
   color: #BABBBD;
