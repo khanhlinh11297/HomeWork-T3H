@@ -106,6 +106,7 @@ const students = [
   { id: 7, name: 'Trần Minh Minh', score: 6.1 }
 ]
 
+/**
 const getStudentPass = (array = []) => {
   const studentPass = []
   array.forEach(student => {
@@ -117,9 +118,9 @@ const getStudentPass = (array = []) => {
   })
   return studentPass
 }
-
 console.log("------- Test Ex 9 ------- ")
 console.log(getStudentPass (students));
+ */
 
 
 // Bài 10
