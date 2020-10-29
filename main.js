@@ -43,18 +43,9 @@ console.log(getReverseArray('hello'))
 // Exercies 3: Xóa đi các giá trị được xem là sai
 
 
-
 /* Bài 4: Tạo ra 1 array gồm các object có key và value tương ứng cặp array ban đầu
   const data = [['a', 1], ['b', 2]]
   { a: 1, b: 2 } */
-
-  const createObj = dataArr => {
-    const obj = {}
-    dataArr.forEach(arr => {
-      obj[arr[0]] = arr[1]
-    })
-    return obj
-  }
 
   const createObject = (array = []) => {
     const newObject = {}
@@ -86,8 +77,6 @@ console.log(`checkObject linh`);
 console.log(checkObject(linh));
 
 // Bài 7: Viết 1 hàm trả về các key (của 1 object) khác các key truyền vào Vd:
-
-
 
 // Bài 8: Viết hàm nhập vào 1 array có nhiều hơn 5 phần tử Xóa phần tử số 2, 3 trong array Return mảng sau khi đã xóa
 const delIndexArray = (array = []) => {
@@ -136,13 +125,8 @@ console.log(getStudentPass (students));
 // Bài 10
 /**
 Cho array có cấu trúc như input bài 9
-
 Hãy tìm các students có điểm là số mà tổng số nút của phần trước dấu thập phân và phần sau dấu thập phân cộng lại lớn hơn 5
-
 Vd: 6.9 -> 6 + 9 = 5 (không lấy)
-
 3.7 -> 3 + 7 = 0 (không lấy) 5.2 -> 5 + 2 = 7 (lấy)
-
-
  */
 
