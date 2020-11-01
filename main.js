@@ -55,11 +55,7 @@ const chunk = (array,n) => {
   return newArray
 }
 
-/**
- * Lesson 4:
-Không sống nổi với má, Tèo quyết định đi làm ở 1 công ty ở Thạch Thất, và đang phải phân tích dựa vào các data đã có sẵn, mỗi 1 array là thông tin của 1 cái gì đó mà Tèo cũng không biết nữa, nhiệm vụ của Tèo là tìm ra điểm chung của 2 array với nhau, Tèo đang khóc ra tiếng mán vì quá khó, hãy giúp Tèo
- */
-// ex5:
+// Lesson 5:
 const checkDates = (date) => {
   const timeSale = 'Oct 30, 2020 12:30:32'
   if (Date.parse(date) <= Date.parse(timeSale)) return true
