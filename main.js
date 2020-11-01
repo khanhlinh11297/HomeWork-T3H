@@ -1,133 +1,163 @@
-/* Exercises 1: Viết 1 hàm trả về 1 array, nhận vào 2 tham số
-tham số thứ 1 là ký tự cần lặp, tham số thứ 2 là số lần lặp */
-// Way 1
-const getArray = (string, numofrep) => {
-  const arrayChar = []
-  for (let i = 0; i < numofrep; i++) {
-    arrayChar.push(string)
-  }
-  return arrayChar
-}
-
-console.log("------- Test Ex1 Way 1 ------- ")
-console.log(getArray('hihi',3))
-
-// Way 2
-const getArray2 = (string, numofrep) => {
-  const arr = []
-  let i = 0;
-  do {
-    arr.push(string)
-    i++;
-  } while (i <= numofrep)
-  return arr
-};
-
-console.log("------- Test Ex1 Way 2 ------- ");
-console.log(getArray2('haha', 5))
-
-/* Exercires 2: Viết 1 hàm để đảo ngược 1 mảng
-không được dùng hàm array.reverse() */
-
-const getReverseArray = (array) => {
-  const newArray = [];
-  for (let index = array.length - 1; index >= 0; index--) {
-    newArray.push(array[index])
-    newArray.join(newArray)
-  }
-  return newArray;
-};
-console.log("------- Test Ex 2 ------- ")
-console.log(getReverseArray('hello'))
-
-// Exercies 3: Xóa đi các giá trị được xem là sai
-
-
-/* Bài 4: Tạo ra 1 array gồm các object có key và value tương ứng cặp array ban đầu
-  const data = [['a', 1], ['b', 2]]
-  { a: 1, b: 2 } */
-
-  const createObject = (array = []) => {
-    const newObject = {}
-    array.forEach(item => {
-      newObject[item[0]] = item[1]
-    })
-    return newObject
-  }
-
-// Exercies 5: Sắp xếp mảng tăng dần
-
-const sortArr = arr => arr.sort()
-
-console.log("------- Test Ex 5 ------- ")
-console.log(`array='1','3','4','-4','0'`)
-console.log(sortArr(['1','3','4','-4','0']))
-
-
-// Bài 6: Kiểm tra input đầu vào có phải là object hay không?
-const checkObject = obj => {
-  if (typeof(obj) !== 'object') return 'It is not object'
-  else return 'It is object'
-}
-console.log("------- Test Ex 6 ------- ")
-const linh = [
-  { name: 'Nguyễn linh', age: 9.2 }
-]
-console.log(`checkObject linh`);
-console.log(checkObject(linh));
-
-// Bài 7: Viết 1 hàm trả về các key (của 1 object) khác các key truyền vào Vd:
-
-// Bài 8: Viết hàm nhập vào 1 array có nhiều hơn 5 phần tử Xóa phần tử số 2, 3 trong array Return mảng sau khi đã xóa
-const delIndexArray = (array = []) => {
-  if (array.length < 5) return 'not compatible'
-  if (array.splice(1,2)) return array
-}
-
-console.log("------- Test Ex 8 ------- ")
-console.log(`Text với array= '1','3','4','-4','0'`);
-console.log(delIndexArray (['1','3','4','-4','0']));
-
-/* Bài 9:
-Hãy tạo 1 array mới với cấu trúc sau:
-['Pass', 'Fail', 'Fail', 'Pass', 'Pass', 'Fail', 'Pass']
-Điều kiện Pass:
-Điểm trên 5.0 và không có chữ Duy là tên đệm
-
- */
-
-const students = [
-  { id: 1, name: 'Nguyễn Thị Tèo', score: 9.2 },
-  { id: 2, name: 'Phạm Văn Bưởi', score: 2.3 },
-  { id: 3, name: 'Hoàng Văn Nam', score: 3.7 },
-  { id: 4, name: 'Vũ Ngọc Duy', score: 6.9 },
-  { id: 5, name: 'Nguyễn Minh Nhật', score: 5.2 },
-  { id: 6, name: 'Phí Duy Quân', score: 9.6 },
-  { id: 7, name: 'Trần Minh Minh', score: 6.1 }
-]
-
 /**
-const getStudentPass = (array = []) => {
-  const studentPass = []
-  array.forEach(student => {
-    if (student.score < 5.0 || (student.name.indexOf('Duy') >= 3 && student.name.indexOf('Duy') <= 7)) {
-      studentPass.push('Fail')
-    } else {
-      studentPass.push('Pass')
+ * Lesson 1:
+Chào mọi người, nhân vật chính hôm nay là Tèo. Má tèo là chủ của 1 đại lý vé số, sáng mới ngủ dậy chưa kịp làm gì đã bị má bắt kiểm tra đống vé số ở bên dưới
+Mỗi 1 array là 1 tờ vé số việt lốt, chứa các số khác nhau, thứ tự có thể không sắp xếp tăng dần. Hãy so sánh 2 vé số bất kì, và cho biết có trùng nhau hoàn toàn hay không
+ */
+// Các dãy vé số:
+const arr1 = [1, 2, 3, 4]
+const arr2 = [1, 2, 3, 4]
+const arr3 = [1, 2, 3, 5]
+const arr4 = [1, 2, 3, 4, 5]
+
+function isEqual(newarr1_1, newarr2_1) {
+    max_lenght = newarr1_1.length > newarr2_1.length ? newarr1_1.length : newarr2_1.length;
+    for (var i = 0; i < max_lenght; i++) {
+        if (newarr1_1[i] != newarr2_1[i]) {
+            return false;
+        }
     }
-  })
-  return studentPass
+    return true;
 }
-console.log("------- Test Ex 9 ------- ")
-console.log(getStudentPass (students));
- */
 
-
-// Bài 10
 /**
-Cho array có cấu trúc như input bài 9
-Hãy tìm các students có điểm là số mà tổng số nút của phần trước dấu thập phân và phần sau dấu thập phân cộng lại lớn hơn 5
-Vd: 6.9 -> 6 + 9 = 5 (không lấy)
-3.7 -> 3 + 7 = 0 (không lấy) 5.2 -> 5 + 2 = 7 (lấy)
+ * Lesson 2:
+Nhà Tèo vừa bán vé số vừa bán đồ tạp hóa, ở trong kho, mặt hàng đồ chơi để không ngăn nắp cho lắm, mỗi 1 lần tìm đồ lại tốn rất nhiều thời gian. Má Tèo vừa mua các kệ để show mặt hàng đồ chơi cho dễ nhìn, dễ lựa.
+Nhìn xem, array data bên dưới chính là cách mà má Tèo sắp xếp đồ trước đây, không có quy luật gì cả, trong cái lọ lại chứa cái chai, trong cái chai lại có thể chứa cái gì đấy khác nữa
+Má Tèo muốn sắp xếp lại gọn gàng, đơn giản, dễ nhìn như ví dụ, giúp má Tèo nha
  */
+const data = [1, 2, [3, 4, [5]]]
+// Way 1
+const flatten = arr => {
+  const convertToString = arr.toString().replaceAll(',', '')
+  return convertToString.split('')
+}
+
+// Way 2:
+const flat = arr => {
+  const convertToString = arr.flat(Infinity)
+  return convertToString
+}
+
+/**
+ * Lesson 3:
+Lại là Tèo, sau khi đã có array 1 chiều ở lần trước, Tèo muốn chia array ra thành nhiều đoạn nhỏ hơn, mỗi đoạn chứa n phần tử, giúp Tèo thêm lần nữa nha
+Lại là má Tèo, sau khi bày 1024 đồ hàng lên 1 cái kệ, má Tèo phát hiện ra rằng: mình nên đặt đồ theo từng kệ 1, chẳng hạn kệ 1 sẽ để bàn là + bàn chải đánh răng, kệ 2 sẽ để ô mô và bột giặt, ... nghĩ là làm, má Tèo gọi ngay Tèo ra sai việc vặt
+Kệ data chínhh là công sức lần trước của Tèo, việc bây giờ Tèo phải làm là vứt cái kệ cũ đi thay bằng những cái kệ mới.
+Mỗi 1 kệ sẽ chứa tối đa 1 hay 2 hay 3 hay ... bao nhiêu tùy Tèo cho phép, vì quá mệt mỏi, Tèo đã chạy sang nhờ bạn code hộ output bên dưới
+ */
+const data2 = [1, 2, 3, 4, 5, 6, 7,8];
+
+const divideArray = (arr,n) => {
+  const tempArray = []
+  for (let i = 0; i < arr.length; i += n) {
+    myChunk = arr.slice(i, i + n)
+    tempArray.push(myChunk);
+  }
+  return tempArray
+}
+
+console.log(divideArray(data2,3));
+console.log("Bài 3 :");
+const data_3 = [1, 2, 3, 4, 5, 6, 7,8];
+var newdata_3 = [],
+    newarr_3 = [];
+
+function chunk(data_3, n) {
+    for (var i = 0; i < data_3.length; i++) {
+        newarr_3.push(data_3[i]);
+        if ((i + 1) % n === 0) {
+            newdata_3.push(newarr_3);
+            newarr_3 = [];
+        } 
+        else if (i >= (Math.floor(data_3.length / n)) * n) {
+            newdata_3.push(newarr_3);
+            newarr_3 = [];
+        }
+    }
+}
+
+chunk(data_3, 3);
+console.log(newdata_3);
+
+// Exercise 4:
+const findDuplicatesArray = array => {
+  const duplicatesArray = []
+  const uniqueArray = []
+  for (let i = 0; i < array.length; i++) {
+    if (uniqueArray.indexOf(array[i]) === -1) {
+      uniqueArray.push(array[i])
+    } else {
+      duplicatesArray.push(array[i])
+    }
+  }
+  return duplicatesArray
+}
+
+const intersectionArray = (array1, array2, array3 = []) => {
+  const unifyArray = [ ...array1, ...array2, ...array3 ]
+  return findDuplicatesArray(unifyArray)
+}
+
+//---
+const getIntersection = (data1, data2) => {
+  const result = []
+  for (let i = 0; i < data1.length; i++) {
+    for (let j = 0; j < data2.length; j++) {
+      if (data1[i] === data2[j]) {
+        result.push(data1[i])
+      }
+    }
+  }
+  return result
+}
+
+const arr11 = [1, 2,4,5,6,76]
+const arr22 = [2, 2,2,2,3,76,3,9]
+
+const duplicate = []
+let check = false
+for (let i = 0; i < arr11.length; i++) {
+  for (let j = 0; j < arr22.length; j++) {
+    if (arr11[i] === arr22[j]) {
+      for (let r = 0; r < duplicate.length; r++) {
+        if (arr11[i] === duplicate[r]) {
+          check = true
+        }
+      }
+      if (check == false) {
+        duplicate.push(arr11[i])
+        check = false
+      }
+    }
+  }
+} console.log('số trùng:', duplicate); 
+
+//----------------- 
+// ex5:
+const checkDates = (date) => {
+  const milestoneTime = 'Oct 30, 2020 12:30:32'
+  if (Date.parse(date) <= Date.parse(milestoneTime)) return true
+  else return false
+}
+
+const kiemtra = (bien2) => {
+  const bien1 = '12'
+  if (bien2 <= bien1) return true
+  else return false
+}
+
+
+
+//ex 6:
+const checkUserName = (userName) => {
+  const regexUserName = /^([a-z0-9_]){2,10}$/
+  return userName.indexOf('__') === -1 ? regexUserName.test(userName) : false
+}
+const checkEmail = (email) => {
+  const regexEmail = /^[a-z0-9]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z](?:[a-z]*[a-z])?\.)+[a-z](?:[a-z]*[a-z])?$/i
+  return regexEmail.test(email)
+}
+//----------------- 
+
+
 
