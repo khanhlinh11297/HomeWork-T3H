@@ -10,13 +10,12 @@ const arr3 = [1, 2, 3, 5]
 const arr4 = [1, 2, 3, 4, 5]
 
 function isEqual(newarr1_1, newarr2_1) {
-    max_lenght = newarr1_1.length > newarr2_1.length ? newarr1_1.length : newarr2_1.length;
-    for (var i = 0; i < max_lenght; i++) {
-        if (newarr1_1[i] != newarr2_1[i]) {
-            return false;
-        }
+  max_lenght = newarr1_1.length > newarr2_1.length ? newarr1_1.length : newarr2_1.length;
+  for (var i = 0; i < max_lenght; i++) {
+    if (newarr1_1[i] != newarr2_1[i]) {
+      return false;
     }
-    return true;
+  } return true;
 }
 
 /**
@@ -34,7 +33,7 @@ const flatten = array => {
 
 // Way 2:
 const flat = array => {
-  const convertToString = arr.flat(Infinity)
+  const convertToString = array.flat(Infinity)
   return convertToString
 }
 
@@ -51,8 +50,7 @@ const chunk = (array,n) => {
   for (let i = 0; i < array.length; i += n) {
     myChunk = array.slice(i, i + n)
     newArray.push(myChunk);
-  }
-  return newArray
+  } return newArray
 }
 
 // Lesson 5:
